@@ -1,3 +1,6 @@
+import 'package:flutter/cupertino.dart';
+import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:softbd/src/config/imports.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,6 +15,34 @@ class DashboardScreen extends StatelessWidget {
     final controller = Get.find<DashboardController>();
     return SafeArea(
         child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: tWhiteColor,
+            titleSpacing: 5.w,
+            title: Row(
+              children: [
+                Image.asset(appbarIcon),
+                Gap(10.w),
+                Text('Flutter Task',style: GoogleFonts.notoSerifBengali(color: tBlackColor,fontSize: 16.sp,fontWeight: FontWeight.w700)),
+              ],
+            ),
+            actions: [
+              Padding(
+                padding: EdgeInsets.only(right: 20.w),
+                child: InkWell(
+                  onTap: (){},
+                  child: Container(
+                    width: 35.w,
+                    height: 35.h,
+                    decoration: BoxDecoration(
+                      color: tButtonBackgroundColor,
+                      borderRadius: BorderRadius.circular(20.r)
+                    ),
+                      child: Icon(Icons.notifications_none,color: tBlackColor,size: 25.sp,)),
+                ),
+              )
+            ],
+          ),
+          drawer: Drawer(backgroundColor: tWhiteColor),
           body: Stack(
             children: [
               Obx(() => IndexedStack(
@@ -50,7 +81,7 @@ class DashboardScreen extends StatelessWidget {
               ),
 
               Positioned(
-                bottom: -15,
+                bottom: -15.h,
                 child: SizedBox(
                   width: Get.width,
                   height: 100.h,
