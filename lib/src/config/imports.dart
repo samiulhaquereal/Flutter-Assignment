@@ -13,3 +13,5 @@ export 'package:softbd/src/features/core/dashboard/controller/dashboard_controll
 export 'package:flutter/widgets.dart';
 export 'package:flutter_svg/flutter_svg.dart';
 export 'package:softbd/src/constand/image_string.dart';
+export 'package:gap/gap.dart';
+export 'package:google_fonts/google_fonts.dart';
