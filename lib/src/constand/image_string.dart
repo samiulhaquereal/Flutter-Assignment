@@ -1,0 +1,1 @@
+const navbarBg = 'assets/images/Subtract.svg';

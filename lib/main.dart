@@ -1,6 +1,11 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:softbd/src/config/imports.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: tWhiteColor,
+    statusBarIconBrightness: Brightness.dark,
+  ));
   runApp(const MyApp());
 }
 
@@ -10,13 +15,21 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      child: GetMaterialApp(
+        title: 'Flutter Assignment',
+        debugShowCheckedModeBanner: false,
+        defaultTransition: Transition.rightToLeft,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: tPrimaryColor),
+          useMaterial3: true,
+        ),
+        initialBinding: RouteBinding(),
+        initialRoute: RoutesClass.getLoginRoute(),
+        getPages: RoutesClass.routes,
+        home: DashboardScreen(),
       ),
-      home: DashboardScreen(),
     );
   }
 }

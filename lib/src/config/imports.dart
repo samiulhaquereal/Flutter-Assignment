@@ -1,3 +1,15 @@
 export 'package:flutter/material.dart';
 export 'package:get/get.dart';
 export 'package:softbd/src/features/core/dashboard/view/dashboard_screen.dart';
+export 'package:softbd/src/config/routes.dart';
+export 'package:softbd/src/config/routes_binding.dart';
+export 'package:softbd/src/utils/parse_file/color_parse.dart';
+export 'package:flutter/services.dart';
+export 'package:softbd/src/constand/color_string.dart';
+export 'package:softbd/src/features/core/add_new/view/add_new_screen.dart';
+export 'package:softbd/src/features/core/dashboard/view/calender_screen.dart';
+export 'package:softbd/src/features/core/dashboard/view/home_screen.dart';
+export 'package:softbd/src/features/core/dashboard/controller/dashboard_controller.dart';
+export 'package:flutter/widgets.dart';
+export 'package:flutter_svg/flutter_svg.dart';
+export 'package:softbd/src/constand/image_string.dart';
