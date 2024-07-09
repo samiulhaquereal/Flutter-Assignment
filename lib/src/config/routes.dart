@@ -9,7 +9,7 @@ class RoutesClass {
 
 
   static List<GetPage> routes = [
-    GetPage(name: _loginPage, page: ()=>const LoginScreen()),
+    GetPage(name: _loginPage, page: ()=>const DashboardScreen()),
   ];
 
 }
