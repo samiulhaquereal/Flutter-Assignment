@@ -1,12 +1,12 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:retcore/retcore.dart';
 import 'package:softbd/src/config/imports.dart';
 
-void main() {
+void main() async{
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: tButtonBackgroundColor,
     statusBarIconBrightness: Brightness.dark,
   ));
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
         initialBinding: RouteBinding(),
         initialRoute: RoutesClass.getLoginRoute(),
         getPages: RoutesClass.routes,
+        builder: EasyLoading.init(),
         home: DashboardScreen(),
       ),
     );

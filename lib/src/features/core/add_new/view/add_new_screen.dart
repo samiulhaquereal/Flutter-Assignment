@@ -2,14 +2,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:softbd/src/config/imports.dart';
 
 
+
 class AddNewScreen extends StatelessWidget {
   const AddNewScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController controller = TextEditingController();
-    FocusNode focusNode = FocusNode();
-    ValueNotifier<String?> selectedItem = ValueNotifier<String?>(null);
+    if (!Get.isRegistered<AddNewController>()) {
+      Get.lazyPut(() => AddNewController());
+    }
+    final controller = Get.find<AddNewController>();
     return SafeArea(child: Scaffold(
       backgroundColor: tButtonBackgroundColor,
       appBar: AppBar(
@@ -32,7 +34,7 @@ class AddNewScreen extends StatelessWidget {
               ),
               RetCore.space(7.h),
               RetCoreTextField(
-                controller: controller,
+                controller: controller.controller,
                 hint: 'অনুচ্ছেদ লিখুন',
                 isBorder: true,
                 borderColor: Colors.grey,
@@ -56,15 +58,15 @@ class AddNewScreen extends StatelessWidget {
                 iconSize: 14.sp,
                 iconColor: Colors.grey,
                 retCoreDropdownFieldStyle: RetCoreDropdownFieldStyle.normal,
-                selectedItem: selectedItem,
-                fieldFocusNode: focusNode,
+                selectedItem: controller.selectedItem,
+                fieldFocusNode: controller.focusNode,
                 borderRadius: 5.r,
               ),
               RetCore.space(15.h),
               Text('তারিখ ও সময়',style: GoogleFonts.notoSerifBengali(color: tBlackColor,fontSize: 16.sp,fontWeight: FontWeight.w700)),
               RetCore.space(7.h),
               RetCoreTextField(
-                controller: controller,
+                controller: controller.controller,
                 hint: 'নির্বাচন করুন',
                 isDatePicker: true,
                 isBorder: true,
@@ -78,7 +80,7 @@ class AddNewScreen extends StatelessWidget {
               Text('স্থান',style: GoogleFonts.notoSerifBengali(color: tBlackColor,fontSize: 16.sp,fontWeight: FontWeight.w700)),
               RetCore.space(7.h),
               RetCoreTextField(
-                controller: controller,
+                controller: controller.controller,
                 hint: 'নির্বাচন করুন',
                 suffixIcon: Icons.arrow_forward_ios_rounded,
                 prefixIcon: Icons.location_on,
@@ -99,7 +101,7 @@ class AddNewScreen extends StatelessWidget {
               ),
               RetCore.space(7.h),
               RetCoreTextField(
-                controller: controller,
+                controller: controller.controller,
                 hint: 'কার্যক্রমের বিবরণ লিখুন',
                 maxLine: 9,
                 iconSize: 14.sp,
