@@ -1,4 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:retcore/retcore.dart';
 import 'package:softbd/src/config/imports.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       child: GetMaterialApp(
+        navigatorKey: RetCoreNavigatorKey,
         title: 'Flutter Assignment',
         debugShowCheckedModeBanner: false,
         defaultTransition: Transition.rightToLeft,

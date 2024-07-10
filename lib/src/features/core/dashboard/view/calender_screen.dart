@@ -17,7 +17,9 @@ class CalenderScreen extends StatelessWidget {
               children: [
                 Text('আজ, ১২ জুলাই ',style: GoogleFonts.notoSerifBengali(color: tBlackColor,fontSize: 16.sp, fontWeight: FontWeight.w700)),
                 InkWell(
-                    onTap: (){},
+                    onTap: (){
+                      Get.toNamed(RoutesClass.getAddNewRoute());
+                    },
                     child: Container(
                       height: 30.h,
                       width: 100.w,

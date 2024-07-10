@@ -1,3 +1,4 @@
+import 'package:retcore/retcore.dart';
 import 'package:softbd/src/config/imports.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,7 +19,7 @@ class DashboardScreen extends StatelessWidget {
               title: controller.myIndex.value == 0 ? Row(
                 children: [
                   Image.asset(appbarIcon),
-                  Gap(10.w),
+                  RetCore.space(10.w),
                   Text('Flutter Task',style: GoogleFonts.notoSerifBengali(color: tBlackColor,fontSize: 16.sp,fontWeight: FontWeight.w700)),
                 ],
               ) : Text('সময়রেখা',style: GoogleFonts.notoSerifBengali(color: tBlackColor,fontSize: 16.sp,fontWeight: FontWeight.w700)),
@@ -29,7 +30,7 @@ class DashboardScreen extends StatelessWidget {
                   child: InkWell(
                     onTap: (){},
                     child: Badge(
-                      smallSize: 8,
+                      smallSize: 8.sp,
                       child: Container(
                         width: 35.w,
                         height: 35.h,
@@ -84,7 +85,7 @@ class DashboardScreen extends StatelessWidget {
                 Positioned(
                   bottom: -15.h,
                   child: SizedBox(
-                    width: Get.width,
+                    width: RetCore.width(),
                     height: 100.h,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
