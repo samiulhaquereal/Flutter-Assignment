@@ -7,3 +7,4 @@ Color tRed = parseColor('FF737A');
 
 Color tWhiteColor = Colors.white;
 Color tBlackColor = Colors.black;
+Color tGrayColor = Colors.grey[100]!;

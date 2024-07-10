@@ -3,7 +3,7 @@ import 'package:softbd/src/config/imports.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor: tWhiteColor,
+    statusBarColor: tButtonBackgroundColor,
     statusBarIconBrightness: Brightness.dark,
   ));
   runApp(const MyApp());

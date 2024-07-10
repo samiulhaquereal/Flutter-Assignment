@@ -13,7 +13,7 @@ class DashboardScreen extends StatelessWidget {
     return SafeArea(
         child: Obx(()=> Scaffold(
             appBar: AppBar(
-              backgroundColor: tWhiteColor,
+              backgroundColor: tButtonBackgroundColor,
               titleSpacing: controller.myIndex.value != 0 ? 0.w : 5.w,
               title: controller.myIndex.value == 0 ? Row(
                 children: [
@@ -53,15 +53,16 @@ class DashboardScreen extends StatelessWidget {
                 Positioned(
                   right: -53.w,
                   left: -48.w,
-                  bottom: -40.h,
+                  bottom: -47.h,
                   child: SvgPicture.asset(
-                    navbarBg,fit: BoxFit.cover,
+                    navbarBg,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 Positioned(
                   right: 0.w,
                   left: 0.w,
-                  bottom: 47.h,
+                  bottom: 45.h,
                   child: Center(
                     child: Container(
                       height: 56.h,
@@ -75,7 +76,7 @@ class DashboardScreen extends StatelessWidget {
                           ]
                         )
                       ),
-                      child: Icon(Icons.camera_alt,color: tWhiteColor,size: 32),
+                      child: Image.asset(ButtonIcon7),
                     ),
                   ),
                 ),

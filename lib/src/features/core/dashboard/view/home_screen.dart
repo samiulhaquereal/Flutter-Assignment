@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          backgroundColor: tWhiteColor,
+          backgroundColor: tButtonBackgroundColor,
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 20.h,horizontal: 20.w),
         child: Column(
@@ -20,11 +20,61 @@ class HomeScreen extends StatelessWidget {
             ProfileCard(),
             Gap(25.h),
             TimeCard(),
-
+            Gap(15.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ButtonWidget(label: 'মেনু নং\n০০০০১', icon: ButtonIcon1),
+                ButtonWidget(label: 'মেনু নং\n০০০০২', icon: ButtonIcon2),
+                ButtonWidget(label: 'মেনু নং\n০০০০৩', icon: ButtonIcon3),
+              ],
+            ),
+            Gap(20.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ButtonWidget(label: 'মেনু নং\n০০০০৪', icon: ButtonIcon4),
+                ButtonWidget(label: 'মেনু নং\n০০০০৫', icon: ButtonIcon5),
+                ButtonWidget(label: 'মেনু নং\n০০০০৬', icon: ButtonIcon6),
+              ],
+            )
           ],
         ),
       ),
     ));
+  }
+}
+
+class ButtonWidget extends StatelessWidget {
+  const ButtonWidget({
+    super.key, required this.label, required this.icon,
+  });
+  final String label;
+  final String icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        InkWell(
+          onTap: (){},
+          child: Container(
+            width: 72.w,
+            height: 72.h,
+            decoration: BoxDecoration(
+              color: Colors.grey[200],
+              borderRadius: BorderRadius.circular(10.r),
+            ),
+            child: SizedBox(
+                width: 38.w,
+                height: 38.h,
+                child: Image.asset(icon)),
+          ),
+        ),
+        Gap(7.h),
+        Text(label,style: TextStyle(fontSize: 16.sp,color: tBlackColor,fontWeight: FontWeight.w600))
+      ],
+    );
   }
 }
 
@@ -147,7 +197,7 @@ class ProfileCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.r),
-        color: tWhiteColor,
+        color: tGrayColor,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.2), // Shadow color
