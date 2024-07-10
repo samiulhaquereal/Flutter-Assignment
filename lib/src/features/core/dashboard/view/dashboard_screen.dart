@@ -34,7 +34,7 @@ class DashboardScreen extends StatelessWidget {
                         width: 35.w,
                         height: 35.h,
                         decoration: BoxDecoration(
-                          color: tButtonBackgroundColor,
+                          color: Colors.grey[200],
                           borderRadius: BorderRadius.circular(20.r)
                         ),
                           child: Icon(Icons.notifications_none,color: tBlackColor,size: 25.sp,)),
@@ -97,7 +97,7 @@ class DashboardScreen extends StatelessWidget {
                         IconButton(onPressed: (){
                           controller.myIndex.value = 1;
                           HapticFeedback.lightImpact();
-                        }, icon: Icon(Icons.energy_savings_leaf,color: controller.myIndex.value == 1 ? tBlackColor : Colors.grey,)),
+                        }, icon: Icon(Icons.calendar_month,color: controller.myIndex.value == 1 ? tBlackColor : Colors.grey,)),
                         SizedBox(width: Get.width * 0.20),
                         IconButton(onPressed: (){
                           controller.myIndex.value = 2;
