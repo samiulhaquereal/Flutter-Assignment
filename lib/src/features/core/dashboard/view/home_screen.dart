@@ -1,9 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:softbd/src/config/imports.dart';
-import 'package:softbd/src/utils/circular_progressbar/circular_progress_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,11 +13,11 @@ class HomeScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 20.h,horizontal: 20.w),
         child: Column(
           children: [
-            ProfileCard(),
+            const ProfileCard(),
             Gap(25.h),
-            TimeCard(),
+            const TimeCard(),
             Gap(15.h),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ButtonWidget(label: 'মেনু নং\n০০০০১', icon: ButtonIcon1),
@@ -30,7 +26,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
             Gap(20.h),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ButtonWidget(label: 'মেনু নং\n০০০০৪', icon: ButtonIcon4),
@@ -150,7 +146,7 @@ class TimeCard extends StatelessWidget {
         children: [
           SizedBox(
               width: 108.w,
-              child: AnimatedCircularProgressIndicator(percentage: 0.12, label: 'সময় অতিবাহিত', title: '৬ মাস ৬ দিন',)),
+              child: const AnimatedCircularProgressIndicator(percentage: 0.12, label: 'সময় অতিবাহিত', title: '৬ মাস ৬ দিন',)),
           Gap(15.w),
           Expanded(
             child: Column(
@@ -169,7 +165,7 @@ class TimeCard extends StatelessWidget {
                 Gap(10.w),
                 Text('আরও বাকি',style: GoogleFonts.notoSerifBengali(color: tRed,fontSize: 16.sp, fontWeight: FontWeight.w700)),
                 Gap(5.w),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     RemainTimeBox(firstNumber: '০', SecondNumber: '৫', label: 'বছর',),
@@ -202,11 +198,11 @@ class ProfileCard extends StatelessWidget {
           BoxShadow(
             color: Colors.black.withOpacity(0.2), // Shadow color
             blurRadius: 6.0, // Shadow blur radius
-            offset: Offset(0, 2), // Shadow position
+            offset: const Offset(0, 2), // Shadow position
           ),
         ],
       ),
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
      child: Row(
        crossAxisAlignment: CrossAxisAlignment.center,
        mainAxisAlignment: MainAxisAlignment.start,
@@ -224,7 +220,7 @@ class ProfileCard extends StatelessWidget {
              Text('সফটবিডি লিমিটেড',style: TextStyle(fontSize: 14.sp,color: tBlackColor,fontWeight: FontWeight.w400)),
              Row(
                children: [
-                 Icon(CupertinoIcons.location_solid,size: 16),
+                 const Icon(LineAwesomeIcons.map_marker_alt_solid,size: 16),
                  Gap(3.w),
                  Text('ঢাকা',style: TextStyle(fontSize: 14.sp,color: tBlackColor,fontWeight: FontWeight.w400)),
                ],

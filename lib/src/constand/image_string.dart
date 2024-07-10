@@ -9,3 +9,4 @@ const ButtonIcon4 = 'assets/images/4.png';
 const ButtonIcon5 = 'assets/images/5.png';
 const ButtonIcon6 = 'assets/images/6.png';
 const ButtonIcon7 = 'assets/images/img.png';
+const checkIcon = 'assets/images/check.png';

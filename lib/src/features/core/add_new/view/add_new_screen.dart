@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:retcore/retcore.dart';
 import 'package:softbd/src/config/imports.dart';
-import 'package:softbd/src/utils/custom_input_format/input_format1.dart';
+
 
 class AddNewScreen extends StatelessWidget {
   const AddNewScreen({super.key});
@@ -117,24 +114,17 @@ class AddNewScreen extends StatelessWidget {
                 ],
               ),
               RetCore.space(15.h),
-              InkWell(
-                  onTap: (){
-                    Get.toNamed(RoutesClass.getAddNewRoute());
-                  },
-                  child: Container(
-                    height: 46.h,
-                    width: RetCore.width(),
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            colors: [
-                              tPrimaryColor,
-                              tPrimaryColor2
-                            ]
-                        ),
-                        borderRadius: BorderRadius.circular(10.r)
-                    ),
-                    child: Center(child: Text('সংরক্ষন করুন',style: GoogleFonts.notoSerifBengali(color: tWhiteColor,fontSize: 18.sp, fontWeight: FontWeight.w600))),
-                  )),
+              CustomButton(
+                  onTap: ()async{
+                await CustomDialogBox.dialogBox(title: 'নতুন অনুচ্ছেদ সংরক্ষন', content: 'আপনার সময়রেখাতে নতুন অনুচ্ছেদ সংরক্ষণ সম্পুর্ন হয়েছে',buttonTitle:'আরও যোগ করুন');
+              },
+                  height: 46.h,
+                  width: RetCore.width(),
+                  radius: 10.r,
+                  label: 'সংরক্ষন করুন',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18.sp
+              )
             ],
           ),
         ),

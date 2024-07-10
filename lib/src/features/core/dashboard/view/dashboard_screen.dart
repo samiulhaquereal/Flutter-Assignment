@@ -1,4 +1,3 @@
-import 'package:retcore/retcore.dart';
 import 'package:softbd/src/config/imports.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -94,20 +93,20 @@ class DashboardScreen extends StatelessWidget {
                         IconButton(onPressed: (){
                             controller.myIndex.value = 0;
                             HapticFeedback.lightImpact();
-                        }, icon: Icon(Icons.home_filled,color: controller.myIndex.value == 0 ? tBlackColor : Colors.grey,)),
+                        }, icon: Icon(LineAwesomeIcons.home_solid,color: controller.myIndex.value == 0 ? tBlackColor : Colors.grey,)),
                         IconButton(onPressed: (){
                           controller.myIndex.value = 1;
                           HapticFeedback.lightImpact();
-                        }, icon: Icon(Icons.calendar_month,color: controller.myIndex.value == 1 ? tBlackColor : Colors.grey,)),
+                        }, icon: Icon(LineAwesomeIcons.calendar,color: controller.myIndex.value == 1 ? tBlackColor : Colors.grey,)),
                         SizedBox(width: Get.width * 0.20),
                         IconButton(onPressed: (){
                           controller.myIndex.value = 2;
                           HapticFeedback.lightImpact();
-                        }, icon: Icon(Icons.energy_savings_leaf,color: controller.myIndex.value == 2 ? tBlackColor : Colors.grey,)),
+                        }, icon: Icon(LineAwesomeIcons.draw_polygon_solid,color: controller.myIndex.value == 2 ? tBlackColor : Colors.grey,)),
                         IconButton(onPressed: (){
                           controller.myIndex.value = 3;
                           HapticFeedback.lightImpact();
-                        }, icon: Icon(Icons.energy_savings_leaf,color: controller.myIndex.value == 3 ? tBlackColor : Colors.grey,)),
+                        }, icon: Icon(LineAwesomeIcons.user,color: controller.myIndex.value == 3 ? tBlackColor : Colors.grey,)),
                       ],
                     ),
                   ),
