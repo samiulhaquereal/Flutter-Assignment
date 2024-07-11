@@ -13,7 +13,7 @@ class CalenderController extends GetxController {
   late List<DateTime> dateRange;
   RxBool isIgnore = false.obs;
   final ActivitiesModel activitiesModel = ActivitiesModel();
-  Rx<ActivitiesModel> activitiesModelList = ActivitiesModel().obs ;
+  RxMap<String, dynamic> activitiesList = <String, dynamic>{}.obs;
 
   final Map<String, String> banglaDays = {
     'Mon': 'সোম',
@@ -93,6 +93,35 @@ class CalenderController extends GetxController {
     return banglaMonths[monthInEnglish] ?? monthInEnglish;
   }
 
+  Map<String , dynamic> sortDateTimeBangla(String date) {
+    int timestamp = RetCore.parseInt(number: date, defaultValue: 0);
+    DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(timestamp * 1000);
+    int hour = dateTime.hour;
+    String hourFormatted = (hour % 12 == 0) ? '12' : (hour % 12).toString().padLeft(2, '0');
+    String inBanglaLanHour = hourFormatted.split('').map((digit) => banglaDigits[digit] ?? digit).join('');
+    String minutes = dateTime.minute.toString().padLeft(2, '0');
+    String inBanglaLanMin = minutes.split('').map((digit) => banglaDigits[digit] ?? digit).join('');
+
+    //String formattedDate = DateFormat('KK:mm মি.', 'bn_BD').format(dateTime);
+    String period = getPeriod(dateTime);
+    return {'period': period , 'time': '$inBanglaLanHour:$inBanglaLanMin মি.'};
+  }
+
+  String getPeriod(DateTime dateTime) {
+    String period;
+    int hour = dateTime.hour;
+    if (hour >= 4 && hour < 12) {
+      period = 'সকাল';
+    } else if (hour >= 12 && hour < 16) {
+      period = 'দুপুর';
+    } else if (hour >= 16 && hour < 20) {
+      period = 'বিকেল';
+    } else {
+      period = 'রাত';
+    }
+    return period;
+  }
+
   Future<void> getDate()async{
     try {
       today = DateTime.now();
@@ -106,7 +135,7 @@ class CalenderController extends GetxController {
     try {
       Map<String, dynamic>? data = await _services.getActivitiesData();
       if(data != null && data!.isNotEmpty){
-        activitiesModelList.value = ActivitiesModel.fromJson(data);
+        activitiesList.assignAll(data);
       } else {
         log('Data is Empty');
       }
