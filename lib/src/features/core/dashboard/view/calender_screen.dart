@@ -99,8 +99,8 @@ class CalenderScreen extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       gradient: LinearGradient(
                                         colors: [
-                                          tPrimaryColor,
-                                          tPrimaryColor2
+                                          index % 2 != 0 ? parseColor('202020') : tPrimaryColor,
+                                          index % 2 != 0 ? parseColor('202020') : tPrimaryColor2,
                                         ]
                                       ),
                                       borderRadius: BorderRadius.circular(9.r)
