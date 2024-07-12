@@ -25,7 +25,10 @@
         </div>
     </td>
   </tr>
-<tr>
-<img src="screenshots/demo.mp4" height="250px"/>
-</tr>
 </table>
+
+## Preview:
+
+<video width="320" height="240" controls>
+  <source src="screenshots/demo.mp4" type="video/mp4">
+</video>
